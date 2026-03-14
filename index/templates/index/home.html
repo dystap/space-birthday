@@ -1,6 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
 <html>
-<head>test</head>
-<body>
-    <p>test</p>
-</body>
+    <head>
+        <title>Space Birthday</title>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        <script src"{% static 'main.js' %}"></script>
+    </head>
+    <body>
+        
+        <div class"dropdown-box">
+            <div class="selected-item">
+                <input type="text" name="" value="Select" readonly id="">
+            </div>
+        </div>
+        <div class"dropdown-content">
+            <div class"search-input">
+                <input type="text" name="" value="" id="">
+
+            </div>
+            <ul>
+                <li class="dropdown-item active">Select</li>
+                <li class="dropdown-item">red</li>
+                <li class="dropdown-item">blue</li>
+                <li class="dropdown-item">purple</li>
+                <li class="dropdown-item">pink</li>
+            </ul>
+        </div>
+    </body>
 </html>
