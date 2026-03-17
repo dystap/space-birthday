@@ -1,6 +1,7 @@
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 50px 200px;
 }
 
@@ -8,11 +9,13 @@ body{
     box-sizing: border-box;
     margin: 0;
     padding:0;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
 .dropdown-box{
     width: 300px;
+    position: relative;
 }
 
 
@@ -22,6 +25,7 @@ body{
     outline: none;
     border-radius: 5px;
     padding: 3px 5px;
+    color: rgb(66, 66, 66);
 }
 
 .dropdown-box .selected-item{
@@ -49,6 +53,17 @@ body{
 .dropdown-box .dropdown-content{
     box-shadow: 0 5px 15px rgb(190, 190, 190);
     border-radius: 5px;
+    max-height: 190px;
+    overflow: auto;
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.dropdown-box.active .dropdown-content{
+    display: block;
 }
 
 .dropdown-box .dropdown-content .search-input{
@@ -57,4 +72,19 @@ body{
 
 .dropdown-box .dropdown-content ul{
     list-style: none;
+}
+
+.dropdown-box .dropdown-content ul li{
+    font-size: 0.9rem;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.dropdown-box .dropdown-content ul li:hover{
+    background-color: rgb(236, 236, 236);
+}
+
+.dropdown-box .dropdown-content ul li.active{
+    background-color: rgb(189, 218, 255);
+    color: rgb(26, 26, 155);
 }
