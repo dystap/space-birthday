@@ -11,9 +11,42 @@ window.addEventListener("load", () => {
         }
         else if(selectedItem.contains(windowClickEvent.target)){
             openDropdown();
-        }
-        
+        }    
     })
+
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+
+    dropdownItems.forEach(dropdownItem => {
+        dropdownItem.addEventListener("click", () =>{
+            dropdownItems.forEach(innerDropdownItem => {
+            innerDropdownItem.classList.remove("active");
+        })
+
+        dropdownItem.classList.add("active");
+        
+        const selectedItemInput =  document.querySelector(".selected-item input");
+
+        selectedItemInput.value =  dropdownItem.innerHTML; 
+        closeDropdown();
+
+        })
+    })
+    
+    const searchInput = document.querySelector(".search-input input");
+
+    searchInput.addEventListener("keyup", () => { 
+        const filter = searchInput.value.toLocaleLowerCase();
+
+        dropdownItems.forEach(dropdownItem => {
+            if (dropdownItem.innerHTML.toLocaleLowerCase.startsWith(filter)){
+                dropdownItem.classList.remove("hide");
+            }
+            else{
+                dropdownItem.classList.add("hide");
+            }
+        })
+    })
+
 })
 
 function openDropdown(){

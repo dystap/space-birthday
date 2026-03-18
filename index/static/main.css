@@ -88,3 +88,7 @@ body{
     background-color: rgb(189, 218, 255);
     color: rgb(26, 26, 155);
 }
+
+.dropdown-box .dropdown-content ul li.hide {
+    display: none;
+}
