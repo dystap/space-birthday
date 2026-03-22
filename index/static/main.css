@@ -2,7 +2,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 0 ;
+    gap: 20px;
     min-height: 100vh;
     background-image: url('galaxy.jpg');
 }
@@ -17,10 +19,11 @@ body{
 
 .top{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 2rem;
+    margin-top: 2rem;
     background-color: rgb(209, 188, 248);
-    width: 100%;
+    width: 90%;
 }
 
 .main{
@@ -68,7 +71,6 @@ body{
 
 .text{
     display: flex;
-    justify-content: space-around;
     padding: 2rem;
     width: 100%;
 }
