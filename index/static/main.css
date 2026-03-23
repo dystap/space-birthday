@@ -24,6 +24,7 @@ body{
     margin-top: 2rem;
     background-color: rgb(209, 188, 248);
     width: 90%;
+    border-radius: 15px;
 }
 
 .main{
@@ -46,33 +47,37 @@ body{
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: inherit;
     align-items: center;
     background-size: cover;
-    background-color: rgb(118, 111, 172);
+    background-color: rgb(167, 161, 209);
+    border-radius: 15px;
 }
 
 
 
 .topTitle{
-    color:rgb(51, 0, 0);
+    color:rgb(1, 1, 27);
     background-color: transparent;
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 7rem;
+    font-size: 5em;
     line-height: 1.1;
     border: 10rem;
     margin: auto;
     justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
 .text{
+    margin-top: 20px;
     display: flex;
     padding: 2rem;
-    width: 100%;
+    background-color: rgb(118, 111, 172);
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
 }
 
 .birthday{
@@ -81,13 +86,17 @@ body{
     font-family: "Press Start 2P", system-ui;
     font-weight: 350;
     font-style: normal;
-    font-size: rem;
+    font-size: 2rem;
     line-height: 1.1;
     border: 10rem;
     margin: auto;
     justify-content: center;
-    align-items: center;
+    align-items: center ;
     text-align: center;
+}
+
+.dropbox{
+    margin-top: 2rem;
 }
 
 
@@ -170,4 +179,23 @@ body{
 
 .dropdown-box .dropdown-content ul li.hide {
     display: none;
+}
+
+.descTitle{
+    margin: auto;
+    background-color: blue;
+}
+
+.desc{
+    margin: auto;
+    font-family: "Bitcount Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 10px;
+    font-style: normal;
+    word-spacing: 10px;
+    font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
 }
