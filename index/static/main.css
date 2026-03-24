@@ -183,14 +183,15 @@ body{
 
 .descTitle{
     margin: auto;
-    background-color: blue;
 }
 
 .desc{
     margin: auto;
+    text-align: center;
     font-family: "Bitcount Single", system-ui;
     font-optical-sizing: auto;
     font-weight: 10px;
+    font-size: 2.5em;
     font-style: normal;
     word-spacing: 10px;
     font-variation-settings:
@@ -198,4 +199,10 @@ body{
     "CRSV" 0.5,
     "ELSH" 0,
     "ELXP" 0;
+}
+
+.descText{
+    text-align: justify;
+    margin: auto;
+    width: 67%;
 }
