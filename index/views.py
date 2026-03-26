@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from index.forms import infoForm
 from index.models import info
+import calendar
 
 
 def home(request):
@@ -22,9 +23,14 @@ def Info(request, id):
 
 def fillform(request):
     form = infoForm()
-    return render(request, "index/forms.html")
+    return render(request, "index/forms.html", {
+        "form":form
+    })
 
 def submitform(request):
+
+    print(request.POST)
+
     info.objects.create(
         month = request.POST.get("month"),
         date = request.POST.get("date"),
@@ -36,3 +42,8 @@ def submitform(request):
     )
 
     return redirect("index.home")
+
+def monthTranslate(request):
+    data = info.objects.get(id=id)
+    monthName = calendar.month_name[info.month]
+    return render(request, 'info.html', {'monthName': monthName})

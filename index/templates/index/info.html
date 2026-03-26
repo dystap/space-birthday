@@ -3,14 +3,15 @@
 <html>
     <head>
         <title> 
-            {{ info.month}} {{ info.date }} 
+            {{ Info.month}} {{ Info.date }} 
         </title>
     </head>
     <body>
-        <h1>{{ info.month }} {{ info.date }} </h1>
-        <h1> {{ info.name }}</h1>
-        <img src="{{ info.videoPhoto }}">
-        <p>{{ info.description }}</p>
-        <h1> Credits: {{ info.credit }}</h1>
+        <h1> {{ monthName }} </h1>
+        <h1> {{ Info.date }} </h1>
+        <h1> {{ Info.name }}</h1>
+        <img src="{{ Info.videoPhoto }}">
+        <p>{{ Info.description }}</p>
+        <h1> Credits: {{ Info.credit }}</h1>
     </body>
 </html>

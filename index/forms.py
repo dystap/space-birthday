@@ -1,5 +1,6 @@
 from django import forms
 from index.models import info
+import calendar
 
 
 class infoForm(forms.Form):
@@ -55,3 +56,37 @@ class infoForm(forms.Form):
             "placholder": "Author credit name:"
         })
     )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        month = cleaned_data.get('month')
+        date = cleaned_data.get('date')
+
+        if month > 12:
+            raise ValueError("Months can't be larger than 12")
+        
+        if date > 31:
+            raise ValueError("Date can't be larger than 31")
+        
+        if month == 2 & date > 29:
+            raise ValueError("Date can't be larger than 29")
+            
+        
+
+        
+
+        return cleaned_data
+    
+    def save(self):
+        cleaned_data = self.cleaned_data
+
+        info.objects.create(
+            month=cleaned_data.get("month"),
+            date=cleaned_data.get("date"),
+            name=cleaned_data.get("name"),
+            videoPhoto=cleaned_data.get("videoPhoto"),
+            description=cleaned_data.get("description"),
+            credit=cleaned_data.get("credit"),
+        )
+    
+    
