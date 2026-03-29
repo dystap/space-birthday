@@ -9,7 +9,15 @@ class info(models.Model):
     credit = models.CharField()
 
 
+class data(models.Model):
+    date = models.CharField()
+    title = models.CharField()
+    description = models.TextField()
+    media_url = models.URLField()
 
 
-
-
+class date(models.Model):
+    date = models.CharField()
+    title = models.CharField()
+    description = models.TextField()
+    media_url = models.URLField()

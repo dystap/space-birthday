@@ -1,0 +1,19 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'dates.css' %}">
+        <script src="{% static 'main.js' %}"></script>
+        <title> 
+            Discovery on {{ data.date }} 
+        </title>
+    </head>
+    <body>
+        <h1>{{ data.date }} </h1>
+
+        <h1> {{ data.title }}</h1>
+        <img src="{{ data.media_url }}">
+        {{ data.description|safe }}
+
+    </body>
+</html>

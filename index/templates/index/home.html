@@ -43,8 +43,11 @@
 
                                 </div>
                                 <ul>
-
-                                    
+                                    {% for data in events %}
+                                        <li>{{ data.date}}</li>
+                                    {% empty %}
+                                        <li>No dates found in the database.</li>
+                                    {% endfor %}
                                     
                                     
 
