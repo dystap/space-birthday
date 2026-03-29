@@ -7,6 +7,7 @@ import calendar
 
 def home(request):
     infos = date.objects.all()
+
     dates_queryset = date.objects.all().order_by('date')
 
 
@@ -14,6 +15,14 @@ def home(request):
         "infos": infos,
         'events': dates_queryset,
     })
+
+# def home(request):
+#     raw_items = date.objects.values_list('date', flat=True)
+#     from datetime import datetime
+#     sorted_items = sorted(raw_items, key=lambda x: datetime.strptime(x, "%Y %B %d"))
+#     clean_dates = [d[5:] for d in sorted_items]
+
+#     return render(request, 'home.html', {'dates': clean_dates})
 
 def Info(request, id):
     data = get_object_or_404(info, id=id)
