@@ -1,19 +1,31 @@
 {% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trispace:wght@100..800&display=swap" rel="stylesheet">
+
+
 
 <html>
     <head>
         <link rel="stylesheet" href="{% static 'dates.css' %}">
-        <script src="{% static 'main.js' %}"></script>
+        <script src="{% static 'dates.js' %}"></script>
         <title> 
             Discovery on {{ data.date }} 
         </title>
     </head>
     <body>
-        <h1>{{ data.date }} </h1>
-
-        <h1> {{ data.title }}</h1>
-        <img src="{{ data.media_url }}">
-        {{ data.description|safe }}
+        <div class="Top">
+            <h1 class="Title"> {{ data.title }}</h1>
+            <p class="Date">{{ data.date }} </p>
+            <img src="{{ data.media_url }}" class="Image">
+        </div>
+        
+        <div class="Bottom">
+            {{ data.description|safe }}
+        </div>
 
     </body>
 </html>

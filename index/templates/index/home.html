@@ -44,7 +44,8 @@
                                 </div>
                                 <ul>
                                     {% for data in events %}
-                                        <li>{{ data.date}}</li>
+                                        <li>
+                                            <a href="{% url 'index:date' data.id %}">{{ data.date}}</a></li>
                                     {% empty %}
                                         <li>No dates found in the database.</li>
                                     {% endfor %}
