@@ -17,7 +17,7 @@ def home(request):
             events.append(monthAndDate)
 
 
-    return render(request, "index/home.html", {
+    return render(request, "index/index.html", {
         "infos": infos,
         'events': events,
     })
