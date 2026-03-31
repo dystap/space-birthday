@@ -1,1 +1,8 @@
 # Space Birthdays!
+
+A website about finding what space thing happened on your birthday (or any other day really) made using django framework!
+
+List of data taken from NASA,  https://apod.nasa.gov/apod/archivepix.html
+
+AI used for some parts of the code:
+-Trying to figure out how to make a CharField into a DateField to remove the year from the list at the main page
