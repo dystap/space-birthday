@@ -10,7 +10,9 @@ body {
     padding: 2rem;
     width: 67%;
     border-radius: 15px;
+    margin-bottom: 3rem;
 }
+
 .Title {
     margin: auto;
     width: 80%;

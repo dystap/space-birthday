@@ -24,7 +24,7 @@
 
         <div class="main">
             <div class="sideColumn">
-                <img src="static/man.jpeg">
+                <img src="static/fluff.png">
             </div>
             <div class="middleColumn">
 
@@ -43,9 +43,9 @@
 
                                 </div>
                                 <ul>
-                                    {% for data in events %}
-                                        <li>
-                                            <a href="{% url 'index:date' data.id %}">{{ data.date}}</a></li>
+                                    {% for monthAndDate in events %}
+                                         
+                                            <a href="{% url 'index:date' monthAndDate %}" class="dropdown-item">{{ monthAndDate}}</a>
                                     {% empty %}
                                         <li>No dates found in the database.</li>
                                     {% endfor %}
@@ -55,7 +55,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <button href="{% url 'index:fillform' %}" class="button">Enter!</button>
+                       
                     </div>
 
 
@@ -64,12 +64,15 @@
                 <div class="descTitle">
                     <h1 class="desc">Description</h1>
                     <p class="descText">Space Birthdays is a tool to find what cool picture
-                        / event that has happened on a specific date!
-                        Credits to  NASA and the photographers for the data!</p>
+                        / event that was dedicated on a specific date!
+                        Credits to  NASA and the photographers for the data ! </p>
                 </div>
             </div>
 
-            <div class="sideColumn"></div>
+            <div class="sideColumn">
+                <p class="text2">All pictures and information by</p> 
+                <img src="static/nasa-logo.png" class="text2">
+            </div>
         </div>
 
 

@@ -97,6 +97,24 @@ body{
     width: 90%;
 }
 
+.text2{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+    font-family: "Bitcount Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 10px;
+    font-size:  2em;
+    font-style: normal;
+    color: rgb(42, 8, 121);
+    background-color: white;
+    padding: 15px;
+    
+    
+}
+
 .birthday{
     color:rgb(0, 14, 51);
     background-color: transparent;
@@ -177,24 +195,30 @@ body{
 
 .dropdown-box .dropdown-content ul{
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
-.dropdown-box .dropdown-content ul li{
+.dropdown-box .dropdown-content ul li,
+.dropdown-box .dropdown-content ul a{
     font-size: 0.9rem;
     padding: 3px 5px;
     cursor: pointer;
 }
 
-.dropdown-box .dropdown-content ul li:hover{
+.dropdown-box .dropdown-content ul li:hover,
+.dropdown-box .dropdown-content ul a:hover{
     background-color: rgb(236, 236, 236);
 }
 
-.dropdown-box .dropdown-content ul li.active{
+.dropdown-box .dropdown-content ul li.active,
+.dropdown-box .dropdown-content ul a.active{
     background-color: rgb(189, 218, 255);
     color: rgb(26, 26, 155);
 }
 
-.dropdown-box .dropdown-content ul li.hide {
+.dropdown-box .dropdown-content ul li.hide, 
+.dropdown-box .dropdown-content ul a.hide {
     display: none;
 }
 

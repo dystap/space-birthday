@@ -34,15 +34,18 @@ window.addEventListener("load", () => {
     
     const searchInput = document.querySelector(".search-input input");
 
+
     searchInput.addEventListener("keyup", () => { 
         const filter = searchInput.value.toLocaleLowerCase();
-
+        console.log(dropdownItems)
         dropdownItems.forEach(dropdownItem => {
-            if (dropdownItem.innerHTML.toLocaleLowerCase.startsWith(filter)){
+            if (dropdownItem.textContent.toLocaleLowerCase().includes(filter)){
+                console.log(dropdownItem)   
                 dropdownItem.classList.remove("hide");
             }
             else{
                 dropdownItem.classList.add("hide");
+                console.log(dropdownItem)
             }
         })
     })

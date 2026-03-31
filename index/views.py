@@ -3,17 +3,25 @@ from index.forms import infoForm
 from index.models import info
 from index.models import date
 import calendar
-
+import datetime
 
 def home(request):
     infos = date.objects.all()
 
-    dates_queryset = date.objects.all().order_by('date')
+    dates_queryset = list(date.objects.all().order_by('date'))
+    dates_queryset.sort(key=lambda x: datetime.datetime.strptime(x.date, "%Y %B %d").replace(year=2020))
+    events = []
+    for date_object in dates_queryset:
+        monthAndDate = date_object.date[5:].replace(" ","-")
+        if monthAndDate in events:
+            continue
+        else:
+            events.append(monthAndDate)
 
 
     return render(request, "index/home.html", {
         "infos": infos,
-        'events': dates_queryset,
+        'events': events,
     })
 
 # def home(request):
@@ -73,12 +81,10 @@ def submitform(request):
 
 
 
-def dates(request, id):
-    numbers = list(range(1,367))
-    numbers.reverse()
-    realID = numbers[id-1]
+def dates(request, monthAndDate):
     
-    data = get_object_or_404(date, id=realID)
+    
+    data = date.objects.filter(date__endswith=monthAndDate.replace("-", " ")).order_by("?").first()
     data.date
     context={
         "data":data,
